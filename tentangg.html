@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang </title>
+    <style>
+    h1  {
+            text-align: center;
+            font-size: 3.5em;
+        }
+
+        section {
+            text-align: justify;
+            background: #fff;
+            
+        }
+
+        .anggota {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 25px;
+            
+        }
+
+        .anggota div {
+            background: #6e1e01;
+            color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 0;
+            width: 260px;
+            height: 110px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .anggota div:hover {
+            transform: scale(1.1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5em;
+            
+
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .info div{
+            flex: 1;
+            margin-right: 20px;
+        }
+
+        .info img {
+            max-width: 100%;
+            height: auto;
+        }
+
+    </style>
+
+    <header>
+        <h1> Tentang </h1>
+    </header>
+    <main>
+        <section>
+        <p>Website Pengaduan dan Donasi Indonesia berdiri di Aphroditte, Kawasan District 8 awal tahun 2024.
+        Semangat membantu sesama sepertinya sudah masuk ke dalam DNA kita sebagai orang Indonesia.
+        Kebiasaan ringan tangan dan gotong royong ini pun harus terus dilestarikan melalui berbagai cara dan
+        media termasuk platform donasi. Visi kami Membangun masyarakat Indonesia dengan kasih dan kebersamaan.</p>
+        </section>
+        <br>
+  
+        <h2>Susunan Anggota</h2>
+        <section class="anggota">
+                <div>Dita Damayanti</div>
+                <div>Atika Kusuma D.</div>
+                <div>Chintya Anggina</div>
+        </section> 
+
+        <br>
+        <h2>Kontak (Hubungi Kami)</h2>
+        <section class="info">
+            <div>
+                <p>Alamat : Aphroditte, Unit 16B <br>
+                    Jl. Kawasan District 8, <br>
+                    Kalimantan Selatan.<br>
+                    <br>
+                    Email: @pengaduandonasi.com <br>
+                    No Telepon: (021) 12345678 <br></p>
+            </div>
+            <div>
+                <img src="https://th.bing.com/th/id/R.d9da94e27f1801a1dc39ece91a2adef1?rik=3L2NHV3YSlir8g&riu=http%3a%2f%2f4.bp.blogspot.com%2f_-yUbvE8YFfg%2fSLaX0EfbVrI%2fAAAAAAAAAWk%2f3236jMvSSP8%2fw1200-h630-p-k-no-nu%2fPETA%2bBANJARMASIN%2bB.jpg&ehk=c2vZTp4Ix0AKZ1eMy7mnmYJe%2bLZwIo%2fmo7XFlb9crCg%3d&risl=&pid=ImgRaw&r=0"  alt="Lokasi Kami">
+            </div>
+        </section>
+
+
+        <br>
+        <h2>Berikan Pesan/Komentar</h2>
+        <section>
+            <form id="commentForm">
+                <label for="name">Nama:</label><br>
+                <input type="text" id="name" name="name" required style="width: 400px; padding: 30px; border: 1px solid #6e1e01; border-radius: 5px;"><br><br>
+                
+                <label for="comment">Komentar:</label><br>
+                <textarea id="comment" name="comment" rows="4" required style="width: 400px; padding: 30px; border: 1px solid #6e1e01; border-radius: 5px; background-color: #812402; color: #ffffff;"></textarea><br><br>
+                
+                <button type="submit">Kirim</button>
+            </form>
+            <div id="commentsSection">
+                <h3>Komentar Pengguna:</h3>
+                <ul id="commentsList"></ul>
+            </div>
+        </section>
+
+    </main>
+
+        <script>
+            document.getElementById('commentForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // 
+
+                // Mengambil nilai dari input
+                const name = document.getElementById('name').value;
+                const comment = document.getElementById('comment').value;
+
+                // Membuat elemen list untuk komentar
+                const li = document.createElement('li');
+                li.textContent = `${name}: ${comment}`;
+
+                // Menambahkan komentar ke dalam daftar
+                document.getElementById('commentsList').appendChild(li);
+
+                // Mengosongkan form setelah komentar ditambahkan
+                document.getElementById('commentForm').reset();
+            });
+        </script>
+  

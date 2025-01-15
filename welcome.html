@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Utama</title>
+    <style>
+        /* Gaya Halaman */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            width: 100%;
+            height: auto;
+        }
+
+
+        .header-image, .footer-image {
+            width: 100%; /* Mengatur lebar gambar header dan footer agar responsif */
+            height: auto; /* Mengatur tinggi gambar secara otomatis */
+        }
+
+        .container {
+            max-width: 900px; /* Lebar maksimum container */
+            margin: auto;
+            text-align: center; /* Menyelaraskan teks di tengah */
+            padding: 20px;
+        }
+
+        .icon {
+            width: 200px; /* Lebar ikon */
+            height: auto; /* Tinggi otomatis */
+            margin: 20px; /* Margin di sekitar ikon */
+            cursor: pointer; /* Menunjukkan bahwa ikon dapat diklik */
+            transition: transform 0.3s ease;
+        }
+
+        .icon:hover {
+            transform: scale(1.1);
+        }
+
+        .icon-container {
+            display: flex; /* Menggunakan flexbox untuk tata letak ikon */
+            justify-content: center; /* Menyelaraskan ikon di tengah */
+        }
+
+        .footer-image {
+            width: 100%;
+            height: auto;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- Header dengan Gambar -->
+    <header>
+        <img src="c:\Users\LENOVO\Downloads\Atas.png" alt="Header Image" class="header-image">
+    </header>
+
+    <div class="container">
+        <h1>❤️ Selamat Datang di Web Kelompok 1 ❤️</h1>
+        <p><h3>Pilih kategori favorit kamu:</h3></p>
+
+        <!-- Ikon Fitur -->
+        <div class="icon-container">
+            <div class="icon-wrapper">
+                <a href="pengaduann.html">
+               <img src="c:\Users\LENOVO\Downloads\Ikon pengaduan.png" alt="Ikon 1" class="icon">
+           </a>
+                <p class="icon-info">Pengaduan Masalah</p>
+           </div>
+
+           <div class="icon-wrapper">
+                <a href="kategoridonasii.html">
+               <img src="c:\Users\LENOVO\Downloads\Ikon donasi.png" alt="Ikon 2" class="icon">
+           </a>
+                <p class="icon-info">Donasi</p>
+           </div>
+
+           <div class="icon-wrapper">
+                <a href="tentangg.html">
+               <img src="c:\Users\LENOVO\Downloads\Donasi.png" alt="Ikon 2" class="icon">
+           </a>
+                <p class="icon-info">Tentang </p>
+           </div>
+        </div>
+   </div>
+
+    <!-- Footer dengan Gambar -->
+    <footer>
+        <img src="c:\Users\LENOVO\Downloads\Bawah.png" alt="Footer Image" class="footer-image">
+    </footer>
+</body>
+</html>

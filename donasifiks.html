@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Donasi</title>
+    <style>
+        /* Gaya Halaman */
+        body {
+            font-family: 'Sans-serif', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .case-image {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .description {
+            margin: 20px 0;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        input, select {  
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #notification {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Contoh Gambar Kasus -->
+        <img src="c:\Users\LENOVO\Downloads\WhatsApp Image 2024-12-20 at 17.31.13.jpeg" alt="Contoh Kasus" class="case-image">
+        
+        <!-- Deskripsi Kasus -->
+        <div class="description">
+            <p>Jessica adalah seorang gadis kecil berusia 7 tahun yang penuh keceriaan dan impian.  
+               Namun, kebahagiaannya berubah ketika ia didiagnosis menderita leukemia, kanker darah
+               yang menyerang sistem tubuhnya. <br>
+               <br>
+
+               Setelah serangkaian pemeriksaan di rumah sakit, Jessica harus menjalani perawatan intensif. 
+               Setiap minggu, ia menjalani kemoterapi yang melelahkan.
+               Keluarga Jessica, yang berasal dari latar belakang sederhana, berjuang keras untuk mendukung
+               pengobatan anak tercintanya. <br>
+               <br>
+
+               Ayah Jessica bekerja sebagai buruh harian, sementara ibunya setiap
+               hari menemani Jessica di rumah sakit. Biaya pengobatan leukemia sangat besar, meliputi kemoterapi,
+               transfusi darah, hingga obat-obatan khusus. 
+               Meski demikian, keluarga Jessica tidak pernah menyerah untuk berusaha memberikan yang terbaik
+               bagi kesembuhan Jessica. <br>
+               <br>
+
+               Ayo Bantu Jessica Melawan Kanker!
+               Kami mengundang Anda untuk menjadi bagian dari perjuangan Jessica.
+               Dengan bantuan Anda, Jessica bisa mendapatkan pengobatan yang dibutuhkan
+               untuk melawan penyakit ini dan kembali menjalani masa kecilnya yang ceria. <br></p>
+        </div>
+
+        <!-- Form Donasi -->
+        <form id="donationForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" required>
+
+            <label for="amount">Nominal Donasi:</label>
+            <select id="amount" required>
+                <option value="">➡️</option>
+                <option value="30000">Rp 30.000</option>
+                <option value="50000">Rp 50.000</option>
+                <option value="100000">Rp 100.000</option>
+                <option value="lainnya">Nominal Lainnya</option>
+            </select>
+            <input type="number" id="lainnya-amount" placeholder="Masukkan nominal lainnya" style="display:none;">
+
+
+            <label for="paymentMethod">Metode Pembayaran:</label>
+            <select id="paymentMethod" required>
+                <option value="">➡️</option>
+                <option value="Dana">Dana</option>
+                <option value="BRI">BRI</option>
+                <option value="BNI">BNI</option>
+                <option value="BCA">BCA</option>
+                <option value="Mandiri">Mandiri</option>
+            </select>
+
+            <label for="doa">Doa untuk korban:</label>
+            <input type="text" id="doa" required>
+
+            <button type="submit">Kirim Donasi</button>
+        </form>
+
+        <div id="notification" class="hidden"></div>
+    </div>
+
+    <script>
+        document.getElementById('amount').addEventListener('change', function() {
+        var nominalLainnya = document.getElementById('lainnya-amount');
+        if (this.value === 'lainnya') {
+            nominalLainnya.style.display = 'block';
+        } else {
+            nominalLainnya.style.display = 'none';
+        }
+    });
+        // Logika Pengiriman Formulir
+        document.getElementById('donationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form secara default
+
+            // Mengambil nilai dari form
+            const name = document.getElementById('name').value;
+            const amount = document.getElementById('amount').value;
+            const paymentMethod = document.getElementById('paymentMethod').value;
+
+            // Menampilkan notifikasi
+            const notification = document.getElementById('notification');
+            notification.textContent = 'Terima kasih, semoga rezeki Anda terus berlimpah ❤️.';
+            notification.classList.remove('hidden');
+
+            // Mengosongkan form
+            document.getElementById('donationForm').reset();
+        });
+    </script>
+</body>
+</html>

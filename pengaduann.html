@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pengaduan</title>
+    <style>
+        /* Gaya Halaman */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header img {
+            width: 100%;
+            height: auto;
+
+        }
+
+        main {
+            padding: 0;
+        }
+
+        form {
+            background: #9ad8e9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 870px;
+            margin: 0 auto; /* agar form di tengah */
+            display: flex;
+            flex-direction: column;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+
+        h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .custom-file-upload {
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f9fa;
+            text-align: left;
+            margin-bottom: 15px;
+            width: calc(100% - 20px);
+        }
+
+        input[type="submit"] {
+            background: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background: #333;
+            width: 100%;
+        }
+
+        .notification {
+            display: none; /* Sembunyikan notifikasi secara default */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #333;
+            color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 870px;
+
+        }
+
+        footer img {
+            width: 100%;
+            height: auto;    
+        }
+
+    </style>
+
+<body>
+    <header>
+        <img src="c:\Users\LENOVO\OneDrive\Documents\ICON DESAIN\Atas.png" alt="Header Image">
+    </header>
+
+    <main>
+        <form id="formPengaduan" onsubmit="return submitForm();">
+            <h2>Form Pengaduan Masalah Masyarakat</h2>
+            <label for="nama">Nama Anda:</label>
+            <input type="text" id="nama" name="nama" required>
+
+            <label for="deskripsi">Deskripsikan Masalah yang terjadi:</label>
+            <textarea id="deskripsi" name="deskripsi" rows="5" required></textarea>
+
+            <label for="alamat">Lokasi Kejadian:</label>
+            <input type="text" id="alamat" name="alamat" required>
+
+            <label for="gambar">Unggah Gambar:</label>
+            <label class="custom-file-upload">
+                <input type="file" id="gambar" name="gambar" accept="image/*" required>
+                Pilih Gambar
+            </label>
+
+            <input type="submit" value="Kirim Pengaduan">
+        </form>
+
+        <div class="notification" id="notification">
+            Pengaduan Anda berhasil di proses.
+        </div>
+    </div>
+    </main>
+
+    <footer>
+        <img src="c:\Users\LENOVO\OneDrive\Documents\ICON DESAIN\Bawah.png" alt="Footer Image">
+    </footer>
+
+    <script>
+        function submitForm() {
+            document.getElementById('notification').style.display = 'block';
+            // Mengosongkan kotak lagi setelah pengguna nginput  
+            document.getElementById('formPengaduan').reset();
+            // Mencegah pengiriman yg sebenarnya
+            return false;
+        }
+    </script>
